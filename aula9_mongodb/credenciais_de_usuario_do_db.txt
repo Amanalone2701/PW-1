@@ -1,0 +1,4 @@
+usuário: pedrohelios63_db_user
+senha: 0xK5dZgeSU8odkzM
+
+mongodb+srv://pedrohelios63_db_user:0xK5dZgeSU8odkzM@primeirocluster.cqqshus.mongodb.net/

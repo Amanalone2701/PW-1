@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Formulário API</title>
+    <!-- Mudei um pouco o CSS (descomentado) para organizar melhor os dois formulários na tela -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2 { color: #2c3e50; }
+        .form-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+    <h1>Formulários de Teste API</h1>
+    
+    <!-- ========================================== -->
+    <!-- FORMULÁRIO DA VERSÃO 1 (V1)                -->
+    <!-- ========================================== -->
+    <div class="form-container">
+        <h2>Versão 1 (Padrão)</h2>
+        <!-- action aponta para a rota da v1 -->
+        <form action="/v1/hi" method="post">
+            <div class="form-group">
+                <label for="name1">Seu Nome:</label>
+                <input type="text" id="name1" name="name" required placeholder="Digite seu nome">
+            </div>
+            <button type="submit">Enviar Saudação (v1)</button>
+        </form>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- FORMULÁRIO DA VERSÃO 2 (V2 - Múltiplos Idiomas) -->
+    <!-- ========================================== -->
+    <div class="form-container">
+        <h2>Versão 2 (Com Idiomas)</h2>
+        <!-- action agora aponta para a rota da v2 -->
+        <form action="/v2/hi" method="post">
+            <div class="form-group">
+                <label for="name2">Seu Nome:</label>
+                <input type="text" id="name2" name="name" required placeholder="Digite seu nome">
+            </div>
+            
+            <div class="form-group">
+                <label for="lang">Escolha o Idioma:</label>
+                <!-- O "name='lang'" é o que o req.body.lang vai procurar no app.js -->
+                <select id="lang" name="lang">
+                    <option value="pt-br">Português</option>
+                    <option value="en">Inglês</option>
+                    <option value="es">Espanhol</option>
+                </select>
+            </div>
+            
+            <button type="submit">Enviar Saudação (v2)</button>
+        </form>
+    </div>
+</body>
+</html>
