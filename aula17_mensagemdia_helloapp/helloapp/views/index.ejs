@@ -1,0 +1,17 @@
+<%- include('./partials/header'); %>
+<div class="container d-flex vh-100">
+    <div class="row justify-content-center align-self-center w-100">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h4 class="card-title mb-3">Mensagem do Dia</h4>
+                    <p class="card-text mb-4"><strong>"<%= msg %>"</strong></p>
+                    <form method="GET" action="/">
+                        <button type="submit" class="btn btn-primary w-100">Ler outra frase</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./partials/footer'); %>
