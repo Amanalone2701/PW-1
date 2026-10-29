@@ -1,0 +1,35 @@
+<%- include('./partials/header'); %>
+<div class="container mt-5">
+    <h2 class="mb-4">Resultados sem Copyright para: <%= astroPesquisado %></h2>
+    <a href="/" class="btn btn-secondary mb-4">Voltar à Pesquisa</a>
+
+    <% if (images.length > 0) { %>
+        <div id="nasaCarousel" class="carousel slide shadow-lg" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <% images.forEach((img, index) => { %>
+                    <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                        <img src="<%= img.url %>" class="d-block w-100" alt="<%= img.title %>" style="height: 70vh; object-fit: cover;">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2">
+                            <h5><%= img.title %></h5>
+                            <p><%= img.date %></p>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#nasaCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#nasaCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Seguinte</span>
+            </button>
+        </div>
+    <% } else { %>
+        <div class="alert alert-warning">
+            Não foram encontradas imagens livres de direitos de autor para <strong>"<%= astroPesquisado %>"</strong> neste lote. 
+            <br> Lembra-te de pesquisar os termos em inglês (ex: mars, galaxy) e tenta novamente!
+        </div>
+    <% } %>
+</div>
+<%- include('./partials/footer'); %>

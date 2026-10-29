@@ -1,0 +1,14 @@
+<%- include('./partials/header'); %>
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h1 class="mb-4">Pesquisa de Astros da NASA</h1>
+        <form action="/search" method="POST">
+            <div class="mb-3">
+                <label for="astro" class="form-label">Que astro desejas procurar? (Ex: sun, moon, star)</label>
+                <input type="text" class="form-control" id="astro" name="astro" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Procurar</button>
+        </form>
+    </div>
+</div>
+<%- include('./partials/footer'); %>
